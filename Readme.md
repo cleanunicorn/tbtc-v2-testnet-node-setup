@@ -615,3 +615,6 @@ After following the logs a few more minutes it is still unclear if the node is r
 ```
 
 Even though it's not stopping I assume it's still not running correctly. I'm not sure if this is a bug or if I'm doing something wrong.
+
+I don't know how to test if the node runs correctly or not and have no idea what do to do next.
+
