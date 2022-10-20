@@ -561,3 +561,57 @@ I searched for "operator" in the documentation and found that the Operator shoul
 - [0xce6232a286e05810aca853309e7c41e63b340b068f07d5a4b7677bb5333ba202](https://goerli.etherscan.io/tx/0xce6232a286e05810aca853309e7c41e63b340b068f07d5a4b7677bb5333ba202)
 
 So it seems like the node should run successfully, thus I don't really know why it's not working and I am blocked.
+
+After reporting this error and receiving a response from the team, I updated the node to the latest version and it seems to be working now.
+
+```
+2022-10-20T17:30:00.641Z        INFO    basichost       basic/basic_host.go:758 error resolving /dns4/keep-validator-0.eks-ap-northeast-2-secure.staging.staked.cloud/tcp/3919/p2p/16Uiu2HAm77eSvRq5ioD4J8VFPkq3bJHBEHkssCuiFkgAoABwjo2S: lookup keep-validator-0.eks-ap-northeast-2-secure.staging.staked.cloud: operation was canceled
+2022-10-20T17:30:00.641Z        INFO    basichost       basic/basic_host.go:758 error resolving /dns4/bst-a01.test.keep.boar.network/tcp/4001/p2p/16Uiu2HAmMosdpAuRSw1ahNhqFq8e3Y4d4c5WZkjW1FGQi5WJwWZ7: lookup bst-a01.test.keep.boar.network: operation was canceled
+2022-10-20T17:30:00.746Z        INFO    dht/RtRefreshManager    rtrefresh/rt_refresh_manager.go:286     finished refreshing cpl 5, routing table size is now 8
+2022-10-20T17:30:00.746Z        INFO    dht/RtRefreshManager    rtrefresh/rt_refresh_manager.go:279     starting refreshing cpl 6 with key CIQAAAM6OUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA (routing table size was 8)
+2022-10-20T17:30:00.848Z        INFO    basichost       basic/basic_host.go:758 error resolving /dns4/keep-validator-0.eks-ap-northeast-2-secure.staging.staked.cloud/tcp/3919/p2p/16Uiu2HAm77eSvRq5ioD4J8VFPkq3bJHBEHkssCuiFkgAoABwjo2S: lookup keep-validator-0.eks-ap-northeast-2-secure.staging.staked.cloud: operation was canceled
+2022-10-20T17:30:00.849Z        INFO    basichost       basic/basic_host.go:758 error resolving /dns4/bst-a01.test.keep.boar.network/tcp/4001/p2p/16Uiu2HAmMosdpAuRSw1ahNhqFq8e3Y4d4c5WZkjW1FGQi5WJwWZ7: lookup bst-a01.test.keep.boar.network: operation was canceled
+2022-10-20T17:30:00.953Z        INFO    dht/RtRefreshManager    rtrefresh/rt_refresh_manager.go:286     finished refreshing cpl 6, routing table size is now 8
+2022-10-20T17:30:00.953Z        INFO    dht/RtRefreshManager    rtrefresh/rt_refresh_manager.go:279     starting refreshing cpl 7 with key CIQAAAB2GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA (routing table size was 8)
+2022-10-20T17:30:01.054Z        INFO    basichost       basic/basic_host.go:758 error resolving /dns4/bst-a01.test.keep.boar.network/tcp/4001/p2p/16Uiu2HAmMosdpAuRSw1ahNhqFq8e3Y4d4c5WZkjW1FGQi5WJwWZ7: lookup bst-a01.test.keep.boar.network: operation was canceled
+2022-10-20T17:30:01.054Z        INFO    basichost       basic/basic_host.go:758 error resolving /dns4/keep-validator-0.eks-ap-northeast-2-secure.staging.staked.cloud/tcp/3919/p2p/16Uiu2HAm77eSvRq5ioD4J8VFPkq3bJHBEHkssCuiFkgAoABwjo2S: lookup keep-validator-0.eks-ap-northeast-2-secure.staging.staked.cloud: operation was canceled
+2022-10-20T17:30:01.158Z        INFO    dht/RtRefreshManager    rtrefresh/rt_refresh_manager.go:286     finished refreshing cpl 7, routing table size is now 8
+2022-10-20T17:30:01.159Z        INFO    dht/RtRefreshManager    rtrefresh/rt_refresh_manager.go:279     starting refreshing cpl 8 with key CIQAAAKXYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA (routing table size was 8)
+2022-10-20T17:30:01.260Z        INFO    basichost       basic/basic_host.go:758 error resolving /dns4/bst-a01.test.keep.boar.network/tcp/4001/p2p/16Uiu2HAmMosdpAuRSw1ahNhqFq8e3Y4d4c5WZkjW1FGQi5WJwWZ7: lookup bst-a01.test.keep.boar.network: operation was canceled
+2022-10-20T17:30:01.261Z        INFO    basichost       basic/basic_host.go:758 error resolving /dns4/keep-validator-0.eks-ap-northeast-2-secure.staging.staked.cloud/tcp/3919/p2p/16Uiu2HAm77eSvRq5ioD4J8VFPkq3bJHBEHkssCuiFkgAoABwjo2S: lookup keep-validator-0.eks-ap-northeast-2-secure.staging.staked.cloud: operation was canceled
+2022-10-20T17:30:01.365Z        INFO    dht/RtRefreshManager    rtrefresh/rt_refresh_manager.go:286     finished refreshing cpl 8, routing table size is now 8
+2022-10-20T17:30:02.606Z        WARN    keep-ethereum   go-log@v1.0.5/log.go:180        could not create subscription to new blocks: [notifications not supported]
+2022-10-20T17:30:07.606Z        WARN    keep-ethereum   go-log@v1.0.5/log.go:180        could not create subscription to new blocks: [notifications not supported]
+2022-10-20T17:30:10.120Z        INFO    tss-lib keygen/prepare.go:78    generating the safe primes for the signing proofs, please wait...
+2022-10-20T17:30:10.120Z        INFO    tss-lib keygen/prepare.go:63    generating the Paillier modulus, please wait...
+```
+
+After following the logs a few more minutes it is still unclear if the node is running correctly or not.
+
+```
+2022-10-20T17:33:47.992Z        WARN    keep-ethereum   go-log@v1.0.5/log.go:180        could not create subscription to new blocks: [notifications not supported]
+2022-10-20T17:33:48.073Z        INFO    tss-lib keygen/prepare.go:99    still generating primes...
+2022-10-20T17:33:48.351Z        WARN    keep-libp2p     go-log@v1.0.5/log.go:180        could not establish connection with bootstrap peer [16Uiu2HAmMosdpAuRSw1ahNhqFq8e3Y4d4c5WZkjW1FGQi5WJwWZ7]: [failed to dial 16Uiu2HAmMosdpAuRSw1ahNhqFq8e3Y4d4c5WZkjW1FGQi5WJwWZ7:
+  * [/ip4/20.81.168.158/tcp/4001] dial backoff]
+2022-10-20T17:33:48.352Z        WARN    keep-libp2p     go-log@v1.0.5/log.go:180        could not establish connection with bootstrap peer [16Uiu2HAm77eSvRq5ioD4J8VFPkq3bJHBEHkssCuiFkgAoABwjo2S]: [failed to dial 16Uiu2HAm77eSvRq5ioD4J8VFPkq3bJHBEHkssCuiFkgAoABwjo2S:
+  * [/ip4/52.79.203.57/tcp/3919] dial backoff]
+2022-10-20T17:33:48.391Z        WARN    keep-libp2p     go-log@v1.0.5/log.go:180        could not establish connection with bootstrap peer [16Uiu2HAky2Y4Tyq5vTA1CxikcDes6o5EH11i2qcg5dBV9W3Lks5c]: [failed to dial 16Uiu2HAky2Y4Tyq5vTA1CxikcDes6o5EH11i2qcg5dBV9W3Lks5c:
+  * [/ip4/35.195.239.91/tcp/3919] dial tcp4 35.195.239.91:3919: connect: connection refused]
+2022-10-20T17:33:48.391Z        WARN    keep-libp2p     go-log@v1.0.5/log.go:180        bootstrap round error: [all bootstrap attempts failed]
+2022-10-20T17:33:49.640Z        INFO    keep-libp2p     libp2p/libp2p.go:241    number of connected peers: [8]
+2022-10-20T17:33:53.000Z        WARN    keep-ethereum   go-log@v1.0.5/log.go:180        could not create subscription to new blocks: [notifications not supported]
+2022-10-20T17:33:54.709Z        INFO    tss-lib keygen/prepare.go:85    safe primes generated. took 46.639925161s
+
+2022-10-20T17:33:56.088Z        INFO    tss-lib keygen/prepare.go:99    still generating primes...
+2022-10-20T17:33:58.015Z        WARN    keep-ethereum   go-log@v1.0.5/log.go:180        could not create subscription to new blocks: [notifications not supported]
+2022-10-20T17:34:01.375Z        INFO    tss-lib keygen/prepare.go:71    paillier modulus generated. took 53.306649822s
+
+2022-10-20T17:34:01.385Z        INFO    keep-tbtc       generator/pool.go:96    generated new parameters, took: [53.316457294s] current pool size: [8]
+2022-10-20T17:34:03.016Z        WARN    keep-ethereum   go-log@v1.0.5/log.go:180        could not create subscription to new blocks: [notifications not supported]
+2022-10-20T17:34:08.016Z        WARN    keep-ethereum   go-log@v1.0.5/log.go:180        could not create subscription to new blocks: [notifications not supported]
+2022-10-20T17:34:11.386Z        INFO    tss-lib keygen/prepare.go:78    generating the safe primes for the signing proofs, please wait...
+2022-10-20T17:34:11.386Z        INFO    tss-lib keygen/prepare.go:63    generating the Paillier modulus, please wait...
+2022-10-20T17:34:13.025Z        WARN    keep-ethereum   go-log@v1.0.5/log.go:180        could not create subscription to new blocks: [notifications not supported]
+```
+
+Even though it's not stopping I assume it's still not running correctly. I'm not sure if this is a bug or if I'm doing something wrong.
